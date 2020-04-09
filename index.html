@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <button id="btn" type="button">choose file</button>
+	<button id="btnToWebAPI" type="button">upload to your WebAPI</button>
+	<button id="btnFileName" type="button">show FileName</button>
+	<span id="percent"></span>
+	<span id="fileName"></span>
+	<div id="bar"></div>
+</body>
+</html>
+
+<script src="./jquery-3.2.1.js"></script>
+<script src="./KYUpload-1.0.0.js"></script>
+<script>
+    $(function () {
+		//套用上傳套件
+        $("#btn").KYUpload({
+            change: function (files) {
+            },
+			success: function (msg) {
+				alert("success");
+			},
+			error: function (xhr) {
+				alert("fail");
+			},
+			progress: function (evt) {
+				//可以用來在自訂的進度條中使用
+				var loaded = evt.loaded;                  //已經上傳大小情况 
+				var tot = evt.total;                      //附件總大小 
+				var per = Math.floor(100 * loaded / tot);     //已經上傳的百分比  
+				$("#percent").html(per+"%");
+			},
+			progressBar: $("#bar"),//指定進度條長在哪個div，不設定就長在按鈕後面
+			GroupName: "myfile",//預設為file
+        });
+		//上傳按鈕
+		$("#btnToWebAPI").on("click",function(){
+			//upload
+			$("#btn").KYUploadSend({
+				url: "http://localhost:58216/ProjectManage/PM_2_D002_FileSave"//"your web api",
+			});
+		})
+		//檔案數量
+		$("#btnFileName").on("click",function(){
+			var fileName = $("#btn").KYUploadFiles("myfile")[0].name;
+			$("#fileName").html("fileName="+fileName);
+		})
+    })
+</script>
