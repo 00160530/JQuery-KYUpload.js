@@ -10,6 +10,8 @@ html5,fileupload,上傳檔案,進度條,ajax,MVC
 
 4.不套用元件可直接把files上傳
 
+PS.上傳的檔案在Sever端要用 "f_"+GroupName 接收
+
 # 預計加入功能(開發日期未定)
 1.列出上傳的檔案
 
@@ -55,11 +57,14 @@ check檢查是否有檔案，預設false，無檔案將不做任何動作，無�
     		//...
     	},
     	progress: function (evt) {
+		var loaded = evt.loaded;//已經上傳大小情况 
+		var tot = evt.total;//附件總大小 
+		var per = Math.floor(100 * loaded / tot);//已經上傳的百分比  
     		//...
     	},
     	progressBar: $("#bar"),//指定進度條長在哪個div，不設定就長在按鈕後面
     	showBar: true,
-    	GroupName: null,
+    	GroupName: null,//預設為file
     });
 上傳：
 $("#btn").msUploadSend({ url: "/ProjectManage/PM_5_U002_save", data: { PK_ID: 123 }, check(檢查是否有檔案): false})
