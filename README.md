@@ -93,21 +93,51 @@ check檢查是否有檔案，預設false，無檔案將不做任何動作，無�
     	showBar: true,
     	GroupName: null,//預設為file
     });
+    
 上傳：
-$("#btn").msUploadSend({ url: "/ProjectManage/PM_5_U002_save", data: { PK_ID: 123 }, check(檢查是否有檔案): false})
+
+	$("#btn").msUploadSend({ url: "http://localhost:58216/ProjectManage/PM_2_D002_FileSave", data: { PK_ID: 123 }, check(檢查是否有檔案): false})
+	
 取得上傳檔案：
-$("#btn").msUploadFiles()
+
+	$("#btn").msUploadFiles()
+	
+取得指定GroupName上傳檔案：
+
+	$("#btn").KYUploadFiles("myfile")
+
 現在的GroupName：
-$("#btn").msUploadGroupName()
+
+	$("#btn").msUploadGroupName()
+
 更換GroupName：
-$("#btn").msUploadGroupName("newName")
+
+	$("#btn").msUploadGroupName("newName")
+
 清除檔案：
-$("#btn").msUploadClearFiles()//clear all
-$("#btn").msUploadClearFiles("GroupName")//clear one GroupName
-不透過套件的原件只做檔案上傳:
-$(input.files).msUploadSendHelper({url: "/ProjectManage/PM_5_U002_GetFileVersion",success: function (msg) {},error: function (xhr) {},filetype: ["exe", "dll"]})
+
+	$("#btn").msUploadClearFiles()//clear all
+	$("#btn").msUploadClearFiles("GroupName")//clear one GroupName
+
+不透過套件的原件只做檔案上傳，filetype可只傳送指定副檔名:
+
+	$(input.files).msUploadSendHelper({url: "/ProjectManage/PM_5_U002_GetFileVersion",success: function (msg) {},error: function (xhr) {},filetype: ["exe", "dll"]})
+
 ------------------------------------------------------------------------------------------------
 UpdateList
-2020/04/09:1.修改Sample、UpdateList文字描述 2.修正IE上傳檔案時的錯誤(IE在清空上傳元件時會觸發change導致檔案被清空，改成清空元件時先去把change事件移除)
-2019/11/06:修正msUploadSend沒設定事件參數會導致事件遺失的錯誤
-2019/10/18:上傳時可以傳入除了change以外的事件複寫要觸發的function了
+
+2020/04/09:
+
+1.修改Sample、UpdateList文字描述
+
+2.微調progressContent(進度條文字)的樣式
+
+3.修正IE上傳檔案時的錯誤(IE在清空上傳元件時會觸發change導致檔案被清空，改成清空元件時先去把change事件移除)
+
+2019/11/06:
+
+修正msUploadSend沒設定事件參數會導致事件遺失的錯誤
+
+2019/10/18:
+
+上傳時可以傳入除了change以外的事件複寫要觸發的function了
