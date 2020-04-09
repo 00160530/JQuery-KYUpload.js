@@ -16,26 +16,26 @@ MIT
 PS.上傳的檔案在Sever端要用 "f_"+GroupName 接收
 
 # 使用說明
-本套件一頁只能套用一個按鈕
+* 本套件一頁只能套用一個按鈕
 
-請不要重複套用
+* 請不要重複套用
 
-適用chrome,IE10以上,Edge(僅在以上瀏覽器測試，其餘瀏覽器應該也可以用)
+* 適用chrome,IE10以上,Edge(僅在以上瀏覽器測試，其餘瀏覽器應該也可以用)
 
-with jquery-3.2.1
+* with jquery-3.2.1
 
 # 參數說明：
-change為選擇上傳路徑的事件
+* change為選擇上傳路徑的事件
 
-success,error,progress相對應為ajax事件
+* success,error,progress相對應為ajax事件
 
-progressBar指定進度條容器，若不指定則長在上傳按鈕下面
+* progressBar指定進度條容器，若不指定則長在上傳按鈕下面
 
-showBar是否產生進度條，如果要自己設計進度條可以不生成
+* showBar是否產生進度條，如果要自己設計進度條可以不生成
 
-GroupName預設file，只能傳入string，可以依據不同檔案分類更換，會放入FormData的name，後台用來做檔案分類
+* GroupName預設file，只能傳入string，可以依據不同檔案分類更換，會放入FormData的name，後台用來做檔案分類
 
-check檢查是否有檔案，預設false，無檔案將不做任何動作，無法從回傳值知道是否有執行上傳，要能判斷請自己改
+* check檢查是否有檔案，預設false，無檔案將不做任何動作，無法從回傳值知道是否有執行上傳，要能判斷請自己改
 
 # 範例
 你只需要在html上放一個button
@@ -95,23 +95,23 @@ check檢查是否有檔案，預設false，無檔案將不做任何動作，無�
 	$(input.files).msUploadSendHelper({url: "/ProjectManage/PM_5_U002_GetFileVersion",success: function (msg) {},error: function (xhr) {},filetype: ["exe", "dll"]})
 
 # index.html範例
-現有
+* 現有
 
-1.套用
+  1.套用
 
-2.上傳檔案
+  2.上傳檔案
 
-3.顯示檔名
+  3.顯示檔名
 
-缺少
+* 缺少
 
-1.切換GroupName
+  1.切換GroupName
 
-2.顯示所有或指定GroupName檔名
+  2.顯示所有或指定GroupName檔名
 
-3.清除所有或指定GroupName檔案
+  3.清除所有或指定GroupName檔案
 
-4.不透過套件的原件只做檔案上傳
+  4.不透過套件的原件只做檔案上傳
 
 # 預計加入功能(開發日期未定)
 1.可選擇檔案是否累積(A.onchange後刷掉 B.onchange後累積)
@@ -128,20 +128,20 @@ check檢查是否有檔案，預設false，無檔案將不做任何動作，無�
 
 
 ------------------------------------------------------------------------------------------------
-UpdateList
+# UpdateList
 
-2020/04/09:
+* 2020/04/09:
 
-1.修改Sample、UpdateList文字描述
+  1.修改Sample、UpdateList文字描述
 
-2.微調progressContent(進度條文字)的樣式
+  2.微調progressContent(進度條文字)的樣式
 
-3.修正IE上傳檔案時的錯誤(IE在清空上傳元件時會觸發change導致檔案被清空，改成清空元件時先去把change事件移除)
+  3.修正IE上傳檔案時的錯誤(IE在清空上傳元件時會觸發change導致檔案被清空，改成清空元件時先去把change事件移除)
 
-2019/11/06:
+* 2019/11/06:
 
-1.修正msUploadSend沒設定事件參數會導致事件遺失的錯誤
+  1.修正msUploadSend沒設定事件參數會導致事件遺失的錯誤
 
-2019/10/18:
+* 2019/10/18:
 
-1.上傳時可以傳入除了change以外的事件複寫要觸發的function了
+  1.上傳時可以傳入除了change以外的事件複寫要觸發的function了
