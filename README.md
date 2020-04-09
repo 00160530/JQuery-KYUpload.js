@@ -1,6 +1,9 @@
 # KYUpload.js
 html5,fileupload,上傳檔案,進度條,ajax,MVC
 
+# License
+MIT
+
 # 現有功能
 1.套用按鈕變成上傳元件
 
@@ -11,38 +14,6 @@ html5,fileupload,上傳檔案,進度條,ajax,MVC
 4.不套用元件可直接把files上傳
 
 PS.上傳的檔案在Sever端要用 "f_"+GroupName 接收
-
-# 預計加入功能(開發日期未定)
-1.可選擇檔案是否累積(A.onchange後刷掉 B.onchange後累積)
-
-2.可指定選檔模式(A.單檔 B.多檔 C.資料夾)
-
-3.限定選檔的副檔名
-
-4.選檔後檢核副檔名
-
-5.列出上傳的檔案
-
-6.可分檔上傳或一次上傳，並跑進度條
-
-# index.html範例
-現有
-
-1.套用
-
-2.上傳檔案
-
-3.顯示檔名
-
-缺少
-
-1.切換GroupName
-
-2.顯示所有或指定GroupName檔名
-
-3.清除所有或指定GroupName檔案
-
-4.不透過套件的原件只做檔案上傳
 
 # 使用說明
 本套件一頁只能套用一個按鈕
@@ -122,6 +93,39 @@ check檢查是否有檔案，預設false，無檔案將不做任何動作，無�
 不透過套件的原件只做檔案上傳，filetype可只傳送指定副檔名:
 
 	$(input.files).msUploadSendHelper({url: "/ProjectManage/PM_5_U002_GetFileVersion",success: function (msg) {},error: function (xhr) {},filetype: ["exe", "dll"]})
+
+# index.html範例
+現有
+
+1.套用
+
+2.上傳檔案
+
+3.顯示檔名
+
+缺少
+
+1.切換GroupName
+
+2.顯示所有或指定GroupName檔名
+
+3.清除所有或指定GroupName檔案
+
+4.不透過套件的原件只做檔案上傳
+
+# 預計加入功能(開發日期未定)
+1.可選擇檔案是否累積(A.onchange後刷掉 B.onchange後累積)
+
+2.可指定選檔模式(A.單檔 B.多檔 C.資料夾)
+
+3.限定選檔的副檔名
+
+4.選檔後檢核副檔名
+
+5.列出上傳的檔案
+
+6.可分檔上傳或一次上傳，並跑進度條
+
 
 ------------------------------------------------------------------------------------------------
 UpdateList
