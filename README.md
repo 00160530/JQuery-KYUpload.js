@@ -57,7 +57,7 @@ check檢查是否有檔案，預設false，無檔案將不做任何動作，無�
     	progress: function (evt) {
     		//...
     	},
-    	progressBar: $("#bar"),
+    	progressBar: $("#bar"),//指定進度條長在哪個div，不設定就長在按鈕後面
     	showBar: true,
     	GroupName: null,
     });
