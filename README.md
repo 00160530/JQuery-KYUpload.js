@@ -98,7 +98,7 @@ check檢查是否有檔案，預設false，無檔案將不做任何動作，無�
 
 	$("#btn").msUploadSend({ url: "http://localhost:58216/ProjectManage/PM_2_D002_FileSave", data: { PK_ID: 123 }, check(檢查是否有檔案): false})
 	
-取得上傳檔案：
+取得所有GroupName上傳檔案：
 
 	$("#btn").msUploadFiles()
 	
@@ -136,8 +136,8 @@ UpdateList
 
 2019/11/06:
 
-修正msUploadSend沒設定事件參數會導致事件遺失的錯誤
+1.修正msUploadSend沒設定事件參數會導致事件遺失的錯誤
 
 2019/10/18:
 
-上傳時可以傳入除了change以外的事件複寫要觸發的function了
+1.上傳時可以傳入除了change以外的事件複寫要觸發的function了
